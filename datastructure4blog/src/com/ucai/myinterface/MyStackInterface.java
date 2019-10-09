@@ -1,4 +1,4 @@
-package com.ucai.stack;
+package com.ucai.myinterface;
 
 public interface MyStackInterface<T> {
 

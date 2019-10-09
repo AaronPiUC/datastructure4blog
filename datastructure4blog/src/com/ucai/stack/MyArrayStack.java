@@ -1,15 +1,17 @@
 package com.ucai.stack;
 
 import com.ucai.array.MyArray;
+import com.ucai.myinterface.MyStackInterface;
 
-public class Mystack<T> implements MyStackInterface<T> {
-    MyArray<T> arr;
+public class MyArrayStack<T> implements MyStackInterface<T> {
 
-    public Mystack(int capacity) {
+    private MyArray<T> arr;
+
+    public MyArrayStack(int capacity) {
         arr = new MyArray<T>(capacity);
     }
 
-    public Mystack() {
+    public MyArrayStack() {
         arr = new MyArray<>();
     }
 
