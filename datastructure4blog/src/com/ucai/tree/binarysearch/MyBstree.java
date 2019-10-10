@@ -1,5 +1,11 @@
 package com.ucai.tree.binarysearch;
 
+import java.util.ArrayDeque;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+import java.util.concurrent.ArrayBlockingQueue;
+
 public class MyBstree <E extends Comparable<E>>{
    private class MyNode{
        E e;
@@ -39,16 +45,48 @@ public class MyBstree <E extends Comparable<E>>{
        }
 
     }
+
     //判断存在
     public boolean contains(E e){
        return contains(root, e);
     }
 
-    //先序遍历
+    //前序遍历
     public void traversePrevious(){
         traversePre(root);
     }
 
+    //前序遍历非递归
+    public void traversePreviousNR(){
+        Stack<MyNode> st = new Stack<>();
+        st.push(root);
+        while (!st.isEmpty()){
+            MyNode cur = st.pop();
+            doSomething(cur);
+            if(cur.right != null){
+                st.push(cur.right);
+            }
+            if(cur.left != null){
+                st.push(cur.left);
+            }
+
+        }
+    }
+
+    public void traverserByFloor(){
+       Queue<MyNode> q = new LinkedList<>();
+       q.add(root);
+       while(!q.isEmpty()){
+           MyNode mn  = q.remove();
+           doSomething(mn);
+           if(mn.left != null){
+               q.add(mn.left);
+           }
+           if(mn.right != null){
+               q.add(mn.right);
+           }
+       }
+    }
     //中序遍历
     public void traverseMiddle(){
         traverseMid(root);
@@ -59,6 +97,71 @@ public class MyBstree <E extends Comparable<E>>{
         traversePro(root);
     }
 
+    //寻找最小元素
+    public E getMinValue(){
+       if(size == 0){
+           throw new IllegalArgumentException("Tree is Empty!");
+       }
+       MyNode mn = root;
+       while(mn.left !=null){
+           mn = mn.left;
+       }
+       return mn.e;
+    }
+
+    //寻找最大元素
+    public E getMaxValue(){
+        if(size == 0){
+            throw new IllegalArgumentException("Tree is Empty!");
+        }
+        MyNode mn = root;
+        while(mn.right !=null){
+            mn = mn.right;
+        }
+        return mn.e;
+    }
+
+    //删除最小元素
+    public E removeMin(){
+        E min = getMinValue();
+        removeMin(root);
+        return min;
+    }
+
+    //删除最大元素
+    public E removeMax(){
+        E min = getMaxValue();
+        removeMax(root);
+        return min;
+    }
+
+    private MyNode removeMax(MyNode mn) {
+
+       if(mn.right == null){
+           MyNode mr = mn.left;
+           mn.left = null;
+           size --;
+           return mr;
+       }
+
+       mn.right = removeMax(mn.right);
+       return mn;
+
+    }
+
+    private MyNode removeMin(MyNode mn) {
+
+        if(mn.left == null){
+            MyNode mr = mn.right;
+            mn.right = null;
+            size --;
+            return mr;
+        }
+
+        mn.left = removeMin(mn.left);
+        return mn;
+
+    }
     private void traversePre(MyNode n){
         if(n == null){
             return;
