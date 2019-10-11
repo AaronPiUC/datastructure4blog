@@ -1,10 +1,8 @@
 package com.ucai.tree.binarysearch;
 
-import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
-import java.util.concurrent.ArrayBlockingQueue;
 
 public class MyBstree <E extends Comparable<E>>{
    private class MyNode{
@@ -135,6 +133,57 @@ public class MyBstree <E extends Comparable<E>>{
         return min;
     }
 
+    //删除任意一个元素
+    public void remove(E e){
+       root = remove(root, e);
+    }
+
+    //删除以node为根的二分搜索树中值为e的结点，递归算法
+    private MyNode remove(MyNode node, E e) {
+        if(node == null){
+            return null;
+        }
+        if(e.compareTo(node.e) < 0){
+            node.left = remove(node.left, e);
+            return node;
+        }else if(e.compareTo(node.e) > 0){
+            node.right = remove(node.left, e);
+            return node;
+        }else {
+
+            if(node.left == null){
+                MyNode mr = node.right;
+                node.right = null;
+                size --;
+                return mr;
+            }
+
+            if(node.right == null){
+                MyNode mr = node.left;
+                node.left = null;
+                size --;
+                return mr;
+            }
+        }
+
+        MyNode successor = minimum(node.right);
+        size ++;
+        successor.right = removeMin(node.right);
+        successor.left = node.left;
+
+        node.left = node.right = null;
+        size --;
+        return successor;
+    }
+
+    private MyNode minimum(MyNode node) {
+       if(node.left == null){
+           return node;
+       }
+       return minimum(node.left);
+    }
+
+
     private MyNode removeMax(MyNode mn) {
 
        if(mn.right == null){
@@ -162,6 +211,7 @@ public class MyBstree <E extends Comparable<E>>{
         return mn;
 
     }
+
     private void traversePre(MyNode n){
         if(n == null){
             return;
