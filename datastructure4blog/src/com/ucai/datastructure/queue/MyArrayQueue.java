@@ -1,7 +1,7 @@
-package com.ucai.queue;
+package com.ucai.datastructure.queue;
 
-import com.ucai.array.MyArray;
-import com.ucai.myinterface.MyQueueInterface;
+import com.ucai.datastructure.array.MyArray;
+import com.ucai.datastructure.myinterface.MyQueueInterface;
 
 
 

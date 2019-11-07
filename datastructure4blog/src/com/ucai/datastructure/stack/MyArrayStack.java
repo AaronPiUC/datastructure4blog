@@ -1,7 +1,7 @@
-package com.ucai.stack;
+package com.ucai.datastructure.stack;
 
-import com.ucai.array.MyArray;
-import com.ucai.myinterface.MyStackInterface;
+import com.ucai.datastructure.array.MyArray;
+import com.ucai.datastructure.myinterface.MyStackInterface;
 
 public class MyArrayStack<T> implements MyStackInterface<T> {
 

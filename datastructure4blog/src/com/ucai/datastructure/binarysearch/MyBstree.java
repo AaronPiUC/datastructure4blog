@@ -1,4 +1,4 @@
-package com.ucai.tree.binarysearch;
+package com.ucai.datastructure.binarysearch;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -4,7 +4,7 @@
  * @date        : 2018/5/16 22:43
  * @email       : liangshanguang2@gmail.com
  ***********************************************************/
-package com.ucai.tree.binarysearch;
+package com.ucai.datastructure.binarysearch;
 
 import java.util.Random;
 

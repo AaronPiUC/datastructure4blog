@@ -1,7 +1,7 @@
-package com.ucai.stack;
+package com.ucai.datastructure.stack;
 
-import com.ucai.linkedlist.MyLinkedList;
-import com.ucai.myinterface.MyStackInterface;
+import com.ucai.datastructure.linkedlist.MyLinkedList;
+import com.ucai.datastructure.myinterface.MyStackInterface;
 
 public class MyLinkedListStack<T> implements MyStackInterface<T> {
 

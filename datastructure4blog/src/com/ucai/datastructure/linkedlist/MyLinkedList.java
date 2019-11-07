@@ -1,4 +1,4 @@
-package com.ucai.linkedlist;
+package com.ucai.datastructure.linkedlist;
 
 public class MyLinkedList<E> {
     //构造一个内部类，Node

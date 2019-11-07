@@ -7,7 +7,7 @@
  * @date        : 2018/5/16 22:19
  * @email       : liangshanguang2@gmail.com
  ***********************************************************/
-package com.ucai.tree.binarysearch;
+package com.ucai.datastructure.binarysearch;
 
 // package Chapter5BinarySearchTree.Section8DeleteNode;
 

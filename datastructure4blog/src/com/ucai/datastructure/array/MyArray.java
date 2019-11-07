@@ -1,9 +1,7 @@
-package com.ucai.array;
+package com.ucai.datastructure.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
 
 /**
  * 创建订制数组

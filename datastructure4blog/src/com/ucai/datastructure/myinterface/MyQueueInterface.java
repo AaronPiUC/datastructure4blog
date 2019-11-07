@@ -1,4 +1,4 @@
-package com.ucai.myinterface;
+package com.ucai.datastructure.myinterface;
 
 public interface MyQueueInterface<E> {
     int getSize();
