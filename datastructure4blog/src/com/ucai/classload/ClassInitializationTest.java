@@ -1,4 +1,4 @@
-package com.ucai.threadtest;
+package com.ucai.classload;
 
 class Parent{
     static{
@@ -16,6 +16,10 @@ class Son extends Parent{
 
 public class ClassInitializationTest {
     public static void main(String[] args) {
-        System.out.println(Son.value);
+        //System.out.println(Son.value);
+        Son[] ps = new Son[10];
     }
 }
+
+
+

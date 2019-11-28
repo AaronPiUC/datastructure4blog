@@ -1,4 +1,4 @@
-package com.ucai.threadtest;
+package com.ucai.thread.newthread;
 
 public class ThreadTest extends Thread{
 
@@ -12,3 +12,4 @@ public class ThreadTest extends Thread{
         th.start();
     }
 }
+
